@@ -1,0 +1,5 @@
+@use "../index" as *;
+
+.wp-block-heading {
+    @include typography($font-family: 'Poppins', $font-weight: 700, $font-size: 40px, $letter-spacing: -3.3px);
+}

@@ -1,0 +1,38 @@
+@mixin flexbox($direction: row, $justify: flex-start, $align: stretch, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+@mixin typography($font-family: 'Poppins', $font-weight: 700, $font-size: 26px, $letter-spacing: -2px) {
+    font-family: $font-family, sans-serif;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    letter-spacing: $letter-spacing;
+  }
+
+  @mixin ripple-effect($background-color) {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 300%;
+        height: 300%;
+        background: $background-color;
+        border-radius: 50%;
+        transform-origin: bottom left;
+        transform: scale(0); // Initial scale for animation
+        z-index: -1;
+        animation: none; // Prevent animation from playing immediately
+    }
+
+    &:hover::before {
+        animation: ripple-expand 0.3s linear forwards;
+    }
+}

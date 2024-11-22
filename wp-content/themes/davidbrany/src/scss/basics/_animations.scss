@@ -1,0 +1,34 @@
+@use "../index" as *;
+
+@keyframes underline-expand {
+    from {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+    to {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+}
+
+@keyframes underline-retract {
+    from {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+    to {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+}
+
+@keyframes ripple-expand {
+    from {
+        transform: scale(0);
+        top: 100%;
+    }
+    to {
+        transform: scale(1);
+        top: -100%;
+    }
+}

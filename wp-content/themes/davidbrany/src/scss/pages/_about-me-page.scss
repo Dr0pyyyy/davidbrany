@@ -1,0 +1,25 @@
+@use "../index" as *;
+
+main {
+
+    @include flexbox(column, space-between, center, 0rem);
+    padding: pxToRem(40px) pxToRem(24px);
+
+    .about-me-header {
+        // padding-bottom: pxToRem(16px);
+    }
+
+    .about-me-par {
+        text-align: center;
+        line-height: pxToRem(24px);
+        @include typography($font-family: 'Roboto', $font-weight: 500, $font-size: 16px, $letter-spacing: 0);
+    }
+
+    .profile-picture {
+        width: pxToRem(240px);
+    }
+
+    .about-me-btn {
+        background-color: $secondary-color-light;
+    }
+}

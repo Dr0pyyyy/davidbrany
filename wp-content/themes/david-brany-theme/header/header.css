@@ -1,0 +1,219 @@
+body {
+    background-color: var(--base-color);
+    color: var(--text-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: var(--base-color);
+}
+
+#hamburger-icon {
+    display: block;
+}
+
+.header-title {
+    margin: 0;
+    font-size: clamp(1.5rem, 2vw + 1rem, 2rem);
+    color: var(--text-color);
+}
+
+.desktop-menu {
+    display: none;
+}
+
+#mobile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--base-color);
+    color: var(--text-color);
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    transition: right 0.5s ease-in-out;
+    z-index: 9999;
+}
+
+#mobile-menu.active {
+    right: 0;
+}
+
+#mobile-menu ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    gap: 3rem;
+}
+
+#mobile-menu ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    box-sizing: border-box;
+}
+
+.mobile-menu-bottom-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    align-items: center;
+    margin-bottom: 6.5rem;
+}
+
+.header-menu-primary-button {
+    position: relative;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+    font-family: 'Basier Regular', sans-serif;
+}
+
+.header-menu-primary-button::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.header-menu-primary-button:hover::after {
+    transform: scaleX(1);
+}
+
+.header-menu-secondary-button {
+    background-color: transparent;
+    border-radius: 1.5rem;
+    border: 2px solid var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.875rem;
+    font-size: 1.5rem;
+    font-family: 'Basier Regular', sans-serif;
+    color: var(--text-color);
+}
+
+.contact-me-button:hover {
+    background-color: var(--green-color);
+}
+
+.language-switcher select {
+    background-color: transparent;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+    border: 2px solid var(--text-color);
+    border-radius: 1.5rem;
+    padding: 0.5rem 0.875rem;
+    font-family: 'Basier Regular', sans-serif;
+
+    /* Remove dropdown arrow */
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.language-switcher select option {
+    color: var(--text-color);
+    background-color: var(--green-color);
+    border: none;
+    outline: none;
+    border-radius: 1.5rem;
+}
+
+body .sun-icon, body.dark-theme .moon-icon {
+    display: none;
+}
+
+body.dark-theme .sun-icon, body .moon-icon {
+    display: inline;
+}
+
+
+@media screen and (min-width: 1300px) {
+    .header-title {
+        padding-right: 3rem;
+        font-family: 'Basier Regular', sans-serif;
+        letter-spacing: -2px;
+    }
+
+    header {
+        padding: 2rem 10rem;
+        justify-content: start;
+    }
+
+    .header-menu-secondary-button {
+        margin: 0;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .desktop-menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        gap: 2rem;
+    }
+
+    .desktop-menu ul {
+        display: flex;
+        list-style: none;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-left-side-menu {
+        gap: 3rem !important;
+    }
+
+    .desktop-menu ul li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .desktop-menu ul li a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1.5rem;
+        font-family: 'Basier Medium', sans-serif;
+        transition: color 0.3s ease;
+    }
+
+    #mobile-menu {
+        display: none;
+    }
+
+    #hamburger-icon {
+        display: none;
+    }
+}

@@ -1,0 +1,172 @@
+@use "../index" as *;
+
+.header-title {
+    @include typography();
+}
+
+#header-expanded {
+    position: fixed;
+    top: 0;
+    transform: translateX(100%);
+    width: 100vw;
+    height: 100vh;
+    transition: transform 0.5s ease-in-out;
+    z-index: 1000;
+    background-color: $primary-color-light;
+    @include flexbox(column, start, center, 0rem);
+}
+
+#header-expanded.active {
+    transform: translateX(0);
+}
+
+.header-top-section {
+    @include flexbox(row, space-between, center, 0rem);
+    padding: pxToRem(24px);
+    width: 100vw;
+}
+
+.header-expanded-content {
+
+    @include flexbox(column, space-between, center, 0rem);
+    padding: pxToRem(48px);
+    padding-bottom: pxToRem(104px);
+    height: 100vh;
+
+    .header-desktop-title {
+        display: none;
+    }
+
+    .header-expanded-pages {
+        @include flexbox(column, center, center, 0rem);
+        
+        li {
+            padding: pxToRem(32px);
+    
+            a {
+                @include typography($font-family: 'Poppins', $font-weight: 400, $font-size: 20px, $letter-spacing: 0);
+                padding-bottom: pxToRem(3px);
+                position: relative;
+                display: inline-block;
+                overflow: hidden;
+            
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: pxToRem(1.8px);
+                    background-color: $text-color-light;
+                    transform: scaleX(0);
+                    transform-origin: left;
+                }
+            
+                &:hover::after {
+                    animation: underline-expand 0.4s ease-in-out forwards;
+                }
+            
+                &:not(:hover)::after {
+                    animation: underline-retract 0.4s ease-in-out forwards;
+                }
+            }
+        }
+    }
+    
+    
+
+    .header-expanded-menu-splitter {
+        width: pxToRem(24px);
+        height: pxToRem(172px);
+        stroke-width: 0;
+        fill: $text-color-light;
+    }
+
+    .header-expanded-bottom {
+        @include flexbox(column, space-around, center, 0rem);    
+        gap: pxToRem(40px);
+
+        a {
+            @include flexbox(row, space-between, center, 6px);    
+            border: pxToRem(2px) solid $text-color-light;
+            border-radius: pxToRem(24px);
+            padding: pxToRem(8px) pxToRem(14px);
+
+            .contact-me-icon {
+                width: pxToRem(18px);
+                height: pxToRem(18px);
+            }
+        }
+
+        .theme-btn {
+
+            @include ripple-effect($secondary-color-light);
+            display: inline-block;
+            cursor: pointer;
+
+            .theme-icon {
+                width: pxToRem(20px);
+                height: pxToRem(20px);
+            }
+        }
+
+        .contact-me-btn {
+            @include ripple-effect($secondary-color-light);
+            @include typography($font-family: 'Poppins', $font-weight: 400, $font-size: 20px, $letter-spacing: 0);
+            padding: pxToRem(8px) pxToRem(14px);
+            border: pxToRem(2px) solid $text-color-light;
+            border-radius: pxToRem(24px);
+            display: inline-flex;
+            align-items: center;
+            gap: pxToRem(6px);
+        
+            .contact-me-icon {
+                width: pxToRem(18px);
+                height: pxToRem(18px);
+            }
+        }        
+    }
+}
+
+
+@media (min-width:801px) {
+    
+    .header-desktop-title {
+        @include typography($font-family: 'Poppins', $font-weight: 600, $font-size: 32px, $letter-spacing: -2px);
+    }
+
+    .header-top-section {
+        display: none;
+    }
+
+    #header-expanded {
+        display: block;
+        transform: translateX(0);
+        position: relative;
+        top: 0;
+        height: pxToRem(116px);
+
+        .header-expanded-content {
+        
+            @include flexbox(row, space-between, center, 0rem);
+            height: auto;
+            padding: pxToRem(32px)  pxToRem(160px);
+    
+            .header-desktop-title {
+                display: block;
+            }
+
+            .header-expanded-pages {
+                @include flexbox(row, space-between, center, 0rem);
+            }
+
+            .header-expanded-menu-splitter {
+                display: none;
+            }
+
+            .header-expanded-bottom {
+                @include flexbox(row, space-between, center, 32px);
+            }
+        }
+    }
+}

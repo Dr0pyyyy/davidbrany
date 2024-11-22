@@ -1,0 +1,172 @@
+@font-face {
+    font-family: 'Basier Bold';
+    src: url('fonts/BasierCircle-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Basier Bold Italic';
+    src: url('fonts/BasierCircle-SemiBoldItalic.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Basier Medium';
+    src: url('fonts/BasierCircle-Medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Basier Medium Italic';
+    src: url('fonts/BasierCircle-MediumItalic.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Basier Regular';
+    src: url('fonts/BasierCircle-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Basier Regular Italic';
+    src: url('fonts/BasierCircle-RegularItalic.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Basier Semibold';
+    src: url('fonts/BasierCircle-SemiBold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Basier Semibold Italic';
+    src: url('fonts/BasierCircle-SemiBoldItalic.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto Medium';
+    src: url('fonts/Roboto-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --base-color: #FEFAE0;
+    --text-color: #150C00;
+    --green-color: #D8E5B6;
+}
+
+p {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Basier Medium', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--base-color);
+}
+
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--base-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+}
+
+button {
+    color: var(--text-color);
+}
+
+.page-template {
+    height: 100%;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    display: flex;
+    flex-direction: column;
+}
+
+.page-content-setup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pe-2 {
+    padding-right: 2rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.dark-theme {
+    --base-color: #3C3B28;
+    --text-color: #EAE6DA;
+    --green-color: #4A5742;
+}
+
+.icon-light {
+    display: none;
+}
+
+.icon-dark {
+    display: inline;
+}
+
+.dark-theme .icon-light {
+    display: inline;
+}
+
+.dark-theme .icon-dark {
+    display: none;
+}
+
+.svg-icon-fill {
+    fill: var(--text-color);
+}
+
+.svg-icon-color {
+    stroke: var(--text-color);
+    transition: stroke 0.3s ease, visibility 0.3s ease;
+}
+
+.svg-icon {
+    stroke-width: 2px;
+    stroke-linecap: round;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.center-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
