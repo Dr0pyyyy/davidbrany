@@ -30,7 +30,7 @@
     height: 100vh;
     transition: transform 0.5s ease-in-out;
     z-index: 1000;
-    background-color: $primary-color-light;
+    background-color: $primary-color;
 }
 
 #header-expanded.active {
@@ -74,7 +74,7 @@
                     left: 0;
                     width: 100%;
                     height: pxToRem(1.8px);
-                    background-color: $text-color-light;
+                    background-color: $text-color;
                     transform: scaleX(0);
                     transform-origin: left;
                 }
@@ -94,7 +94,7 @@
         width: pxToRem(24px);
         height: clamp(10rem, 4.886rem + 21.818vw, 10.75rem);
         stroke-width: 0;
-        fill: $text-color-light;
+        fill: $text-color;
     }
 
     .header-expanded-bottom {
@@ -103,14 +103,14 @@
 
         a {
             @include flexbox(row, space-between, center, 6px);    
-            border: pxToRem(2px) solid $text-color-light;
+            border: pxToRem(2px) solid $text-color;
             border-radius: pxToRem(24px);
             padding: pxToRem(8px) clamp(pxToRem(10px), -1.08rem + 7.273vw, pxToRem(14px));
         }
 
         .theme-btn {
 
-            @include ripple-effect($secondary-color-light);
+            @include ripple-effect($secondary-color);
             padding: clamp(pxToRem(6px), -0.477rem + 3.636vw, pxToRem(8px)) clamp(pxToRem(10px), -0.227rem + 3.636vw, pxToRem(12px));
             display: inline-block;
             cursor: pointer;
@@ -123,9 +123,9 @@
         }
 
         .contact-me-btn {
-            @include ripple-effect($secondary-color-light);
+            @include ripple-effect($secondary-color);
             @include typography($font-family: 'Poppins', $font-weight: 400, $font-size: clamp(pxToRem(16px), -0.705rem + 7.273vw, pxToRem(20px)), $letter-spacing: 0);
-            border: pxToRem(2px) solid $text-color-light;
+            border: pxToRem(2px) solid $text-color;
             border-radius: pxToRem(24px);
             padding: clamp(pxToRem(4px), -0.602rem + 3.636vw, pxToRem(6px)) clamp(pxToRem(10px), -0.227rem + 3.636vw, pxToRem(12px));
             display: inline-flex; 
@@ -142,10 +142,10 @@
 }
 
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (max-width:1920px) {
     
     .header-desktop-title {
-        @include typography($font-family: 'Poppins', $font-weight: 600, $font-size: clamp(2rem, 1.333rem + 1.042vw, 3rem), $letter-spacing: -2px);
+        @include typography($font-family: 'Poppins', $font-weight: 600, $font-size: 32px, $letter-spacing: -2px);
     }
 
     .header-top-section {
@@ -163,7 +163,7 @@
         
             @include flexbox(row, space-between, center, 0rem);
             height: auto;
-            padding: clamp(2rem, 0.667rem + 2.083vw, 4rem) clamp(2.5rem, -2.5rem + 7.813vw, 10rem);
+            padding: clamp(2rem, 0.667rem + 2.083vw, 4rem) clamp(2.5rem, -7.786rem + 16.071vw, 11.5rem);
     
             .header-expanded-left-side {
 
@@ -182,7 +182,7 @@
 
                         a {
                             padding: 0;
-                            @include typography($font-family: 'Poppins', $font-weight: 400, $font-size: clamp(1.25rem, 0.75rem + 0.781vw, 2rem), $letter-spacing: -1px);
+                            @include typography($font-family: 'Poppins', $font-weight: 400, $font-size: clamp(1.25rem, 1.107rem + 0.223vw, 1.375rem), $letter-spacing: -1px);
                         }
                     }
                 }
@@ -197,19 +197,19 @@
                 gap: clamp(1rem, -0.333rem + 2.083vw, 3rem);
 
                 a {
-                    padding: clamp(0.563rem, 0.479rem + 0.13vw, 0.688rem) clamp(0.75rem, 0.5rem + 0.391vw, 1.125rem);
+                    padding: clamp(0.563rem, 0.491rem + 0.112vw, 0.625rem) clamp(0.75rem, 0.607rem + 0.223vw, 0.875rem);
                     border-width: clamp(0.125rem, 0.108rem + 0.026vw, 0.15rem);
                     border-radius: 32px;
 
                     svg {
-                        width: clamp(1rem, 0.417rem + 0.911vw, 1.875rem);
-                        height: clamp(1rem, 0.417rem + 0.911vw, 1.875rem);
+                        width: clamp(1rem, 0.714rem + 0.446vw, 1.25rem);
+                        height: clamp(1rem, 0.714rem + 0.446vw, 1.25rem)
                     }
                 }
 
                 .contact-me-btn {
-                    padding:  3px clamp(1rem, 0.75rem + 0.391vw, 1.375rem);
-                    @include typography($font-family: 'Poppins', $font-weight: 500, $font-size: clamp(1.25rem, 0.75rem + 0.781vw, 2rem), $letter-spacing: -1px);
+                    padding: 3px clamp(0.75rem, 0.607rem + 0.223vw, 1rem);
+                    @include typography($font-family: 'Poppins', $font-weight: 400, $font-size: clamp(1.25rem, 0.964rem + 0.446vw, 1.5rem), $letter-spacing: -1px);
                 }
             }
         }

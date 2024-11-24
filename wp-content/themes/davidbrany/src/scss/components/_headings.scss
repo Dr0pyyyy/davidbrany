@@ -4,8 +4,8 @@
     @include typography($font-family: 'Poppins', $font-weight: 700, $font-size: clamp(2.125rem, -2.136rem + 18.182vw, 2.75rem), $letter-spacing: -3.3px);
 }
 
-@media (min-width:1024px) {
+@media (min-width:1024px) and (max-width:1920px) {
     .wp-block-heading {
-        @include typography($font-family: 'Poppins', $font-weight: 700, $font-size: clamp(4.5rem, 3.167rem + 2.083vw, 6.5rem), $letter-spacing: -5px);
+        @include typography($font-family: 'Poppins', $font-weight: 700, $font-size: clamp(4.5rem, 3.929rem + 0.893vw, 5rem), $letter-spacing: -5px);
     }
 }

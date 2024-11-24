@@ -1,6 +1,6 @@
 @use "../index" as *;
 
-@media (max-width: 480px) { 
+//Phones
     main {
 
         @include flexbox(column, space-between, center, 0rem);
@@ -31,6 +31,12 @@
 
             .about-me-btn {
                 margin-bottom: clamp(pxToRem(24px), -8.727rem + 43.636vw, pxToRem(48px));
+                transition: transform 0.3s ease, background-color 0.3s ease;
+            }
+
+            .about-me-btn:hover {
+                transform: scale(1.1);
+                background-color: black;
             }
 
             .about-me-bottom-section {
@@ -43,7 +49,7 @@
                     width: 100%;
                     height: 2px;
                     border: none;
-                    background-color: $text-color-light;
+                    background-color: $text-color;
                 }
 
                 .social-media-buttons {
@@ -71,8 +77,8 @@
             display: none;
         }
     }
-}
 
+//Tablets
 @media (min-width: 481px) and (max-width: 1023px) {
     main {
 
@@ -140,11 +146,12 @@
     }
 }
 
-@media (min-width: 1024px) {
+//Desktops
+@media (min-width: 1024px) and (max-width: 1920px) {
     main {
         @include flexbox(row, center, center, 0rem);
         height: 100%;
-        padding: clamp(2.5rem, -1.167rem + 5.729vw, 8rem) clamp(2.5rem, -10.833rem + 20.833vw, 22.5rem);
+        padding: clamp(2.5rem, -1.167rem + 5.729vw, 8rem) clamp(2.5rem, -14.643rem + 26.786vw, 17.5rem);
         gap: clamp(2.5rem, -1.667rem + 6.51vw, 8.75rem);
 
         .about-me-mobile-content {
@@ -157,7 +164,7 @@
                 .about-me-par {
                     text-align: center;
                     line-height: clamp(1.75rem, 0.917rem + 1.302vw, 3rem);
-                    @include typography($font-family: 'Poppins', $font-weight: 500, $font-size: clamp(1.125rem, 0.542rem + 0.911vw, 2rem), $letter-spacing: 0);
+                    @include typography($font-family: 'Poppins', $font-weight: 500, $font-size: clamp(1.125rem, 0.696rem + 0.67vw, 1.5rem), $letter-spacing: -1px);
                 }
             }
 
@@ -172,7 +179,7 @@
                 hr {
                     height: 3px;
                     border: none;
-                    background-color: $text-color-light;
+                    background-color: $text-color;
                 }
 
                 .social-media-buttons {
@@ -182,7 +189,7 @@
                     padding: clamp(1rem, 0.467rem + 0.833vw, 1.8rem) clamp(1rem, -0.333rem + 2.083vw, 3rem);
     
                     .social-media-link {
-                        @include typography($font-family: 'Poppins', $font-weight: 400, $font-size: clamp(1.25rem, 0.833rem + 0.651vw, 1.875rem), $letter-spacing: -1px);
+                        @include typography($font-family: 'Poppins', $font-weight: 400, $font-size: clamp(1.25rem, 1.107rem + 0.223vw, 1.375rem), $letter-spacing: -1px);
                         @include flexbox(row, center, center, 0rem);
                         gap: pxToRem(8px);
 
@@ -198,7 +205,10 @@
         .desktop-profile-picture {
             display: block;
         
-            height: clamp(25rem, 12.5rem + 19.531vw, 43.75rem);
+            height: clamp(25rem, 15rem + 15.625vw, 33.75rem);
         }
     }
 }
+
+//4K screens, large screens
+@media (min-width: 1921px) { }

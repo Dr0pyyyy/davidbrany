@@ -69,11 +69,8 @@
                         </svg>
                     </a>
 
-                    <a class="contact-me-btn" href="<?php echo esc_url(get_permalink(14)) ?>" class="contact-link">
+                    <a class="contact-me-btn contact-link" href="<?php echo esc_url(get_permalink(14)) ?>">
                         Contact me
-                        <svg class="contact-me-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13.3333 5L20 12M20 12L13.3333 19M20 12L4 12" />
-                        </svg>
                     </a>
                 </div>
             </div>
