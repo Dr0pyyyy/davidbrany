@@ -142,23 +142,22 @@
 
 @media (min-width: 1024px) {
     main {
-        @include flexbox(row, end, center, 0rem);
+        @include flexbox(row, center, center, 0rem);
         height: 100%;
-        padding: pxToRem(128px) pxToRem(280px);
-        gap: pxToRem(104px);
+        padding: clamp(2.5rem, -1.167rem + 5.729vw, 8rem) clamp(2.5rem, -10.833rem + 20.833vw, 22.5rem);
+        gap: clamp(2.5rem, -1.667rem + 6.51vw, 8.75rem);
 
         .about-me-mobile-content {
             @include flexbox(column, center, center, 0rem);
 
             .about-me-top-section {
                 gap: 0;
-                padding-top: pxToRem(40px);
-                padding-bottom: pxToRem(40px);
+                padding: clamp(1.5rem, 0.833rem + 1.042vw, 2.5rem) 0px;
 
                 .about-me-par {
                     text-align: center;
-                    line-height: pxToRem(36px);
-                    @include typography($font-family: 'Poppins', $font-weight: 500, $font-size: 23px, $letter-spacing: 0);
+                    line-height: clamp(1.75rem, 0.917rem + 1.302vw, 3rem);
+                    @include typography($font-family: 'Poppins', $font-weight: 500, $font-size: clamp(1.125rem, 0.542rem + 0.911vw, 2rem), $letter-spacing: 0);
                 }
             }
 
@@ -167,11 +166,11 @@
             }
 
             .about-me-bottom-section {
-                padding-top: pxToRem(96px);
+                padding-top: clamp(4rem, 1rem + 4.688vw, 8.5rem);
                 width: 100%;
 
                 hr {
-                    height: 2px;
+                    height: 3px;
                     border: none;
                     background-color: $text-color-light;
                 }
@@ -179,18 +178,17 @@
                 .social-media-buttons {
 
                     @include flexbox(row, start, center, 0rem);
-                    gap: pxToRem(64px);
-                    padding: 1rem;
-                
+                    gap: clamp(3.5rem, 2.5rem + 1.563vw, 5rem);
+                    padding: clamp(1rem, 0.467rem + 0.833vw, 1.8rem) clamp(1rem, -0.333rem + 2.083vw, 3rem);
     
                     .social-media-link {
-                        @include typography($font-family: 'Poppins', $font-weight: 400, $font-size: 22px, $letter-spacing: -1px);
+                        @include typography($font-family: 'Poppins', $font-weight: 400, $font-size: clamp(1.25rem, 0.833rem + 0.651vw, 1.875rem), $letter-spacing: -1px);
                         @include flexbox(row, center, center, 0rem);
                         gap: pxToRem(8px);
 
                         svg {
-                            width: pxToRem(24px);
-                            height: pxToRem(24px);
+                            width: clamp(1.5rem, 1.167rem + 0.521vw, 2rem);
+                            height: clamp(1.5rem, 1.167rem + 0.521vw, 2rem);
                             stroke-width: 1px;
                         }
                     }
@@ -199,6 +197,8 @@
         }
         .desktop-profile-picture {
             display: block;
+        
+            height: clamp(25rem, 12.5rem + 19.531vw, 43.75rem);
         }
     }
 }

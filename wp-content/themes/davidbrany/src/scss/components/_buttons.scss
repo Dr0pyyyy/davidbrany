@@ -11,8 +11,8 @@
 
 @media (min-width:1024px) {
     .wp-block-button__link {
-        @include typography($font-family: 'Poppins', $font-weight: 500, $font-size: 24px, $letter-spacing: 0);
-        border-radius: pxToRem(8px);
-        padding: pxToRem(10px) pxToRem(32px);
+        @include typography($font-family: 'Poppins', $font-weight: 500, $font-size: clamp(1.125rem, 0.542rem + 0.911vw, 2rem), $letter-spacing: 0);
+        border-radius: clamp(0.5rem, 0.25rem + 0.391vw, 0.875rem);
+        padding: clamp(0.5rem, 0.333rem + 0.26vw, 0.75rem) clamp(1.125rem, 0.625rem + 0.781vw, 1.875rem);
     }
 }

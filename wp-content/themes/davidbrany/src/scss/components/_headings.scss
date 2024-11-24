@@ -6,6 +6,6 @@
 
 @media (min-width:1024px) {
     .wp-block-heading {
-        @include typography($font-family: 'Poppins', $font-weight: 700, $font-size: 80px, $letter-spacing: -5px);
+        @include typography($font-family: 'Poppins', $font-weight: 700, $font-size: clamp(4.5rem, 3.167rem + 2.083vw, 6.5rem), $letter-spacing: -5px);
     }
 }

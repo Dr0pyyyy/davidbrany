@@ -37,15 +37,17 @@
             <!-- Header main section -->
             <div class="header-expanded-content">
 
-                <h1 class="header-desktop-title">DavidBrany.</h1>
+                <div class="header-expanded-left-side">
+                    <h1 class="header-desktop-title">DavidBrany.</h1>
 
-                <?php
-                wp_nav_menu([
-                    'theme_location' => 'header',
-                    'container' => 'ul',
-                    'menu_class' => 'header-expanded-pages'
-                ]);
-                ?>
+                    <?php
+                    wp_nav_menu([
+                        'theme_location' => 'header',
+                        'container' => 'ul',
+                        'menu_class' => 'header-expanded-pages'
+                    ]);
+                    ?>
+                </div>
 
                 <!-- Arrow splitter -->
                 <div>
