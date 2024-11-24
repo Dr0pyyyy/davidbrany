@@ -1,25 +1,204 @@
 @use "../index" as *;
 
-main {
+@media (max-width: 480px) { 
+    main {
 
-    @include flexbox(column, space-between, center, 0rem);
-    padding: pxToRem(40px) pxToRem(24px);
+        @include flexbox(column, space-between, center, 0rem);
+        padding: clamp(pxToRem(24px), -5.318rem + 29.091vw, pxToRem(40px)) clamp(pxToRem(16px), -0.705rem + 7.273vw, pxToRem(20px));
+        height: 100%;
 
-    .about-me-header {
-        // padding-bottom: pxToRem(16px);
+        .about-me-mobile-content {
+
+            @include flexbox(column, start, center, 0rem);
+            height: 100%;
+            width: 100%;
+
+            .about-me-top-section {
+                @include flexbox(column, space-between, center, 0rem);
+                gap: pxToRem(12px);
+
+                .about-me-par {
+                    text-align: center;
+                    line-height: clamp(pxToRem(20px), -0.455rem + 7.273vw, pxToRem(24px));
+                    @include typography($font-family: 'Poppins', $font-weight: 500, $font-size: clamp(pxToRem(13px), -0.338rem + 4.909vw, pxToRem(15.7px)), $letter-spacing: 0);
+                }
+            }
+
+            .mobile-profile-picture {
+                width: clamp(pxToRem(160px), -30.909rem + 174.545vw, pxToRem(256px));
+                padding-bottom: clamp(pxToRem(24px), -5.318rem + 29.091vw, pxToRem(40px));
+            }
+
+            .about-me-btn {
+                margin-bottom: clamp(pxToRem(24px), -8.727rem + 43.636vw, pxToRem(48px));
+            }
+
+            .about-me-bottom-section {
+
+                @include flexbox(column, space-between, center, 0rem);
+                gap: pxToRem(16px);
+                width: 100%;
+
+                hr {
+                    width: 100%;
+                    height: 2px;
+                    border: none;
+                    background-color: $text-color-light;
+                }
+
+                .social-media-buttons {
+
+                    @include flexbox(row, center, center, 0rem);
+                    width: 100%;
+                    gap: pxToRem(40px);
+
+                    .social-media-link {
+                        @include flexbox(row, center, center, 0rem);
+                        gap: clamp(0px, -1.705rem + 7.273vw, pxToRem(4px));
+                        @include typography($font-family: 'Poppins', $font-weight: 400, $font-size: clamp(pxToRem(14px), -0.341rem + 5.455vw, pxToRem(18px)), $letter-spacing: -1px);
+
+                        svg {
+                            width: pxToRem(22px);
+                            height: pxToRem(22px);
+                            stroke-width: 1px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .desktop-profile-picture {
+            display: none;
+        }
     }
+}
 
-    .about-me-par {
-        text-align: center;
-        line-height: pxToRem(24px);
-        @include typography($font-family: 'Roboto', $font-weight: 500, $font-size: 16px, $letter-spacing: 0);
+@media (min-width: 481px) and (max-width: 1023px) {
+    main {
+
+        @include flexbox(column, space-between, center, 0rem);
+        padding: clamp(pxToRem(24px), -5.318rem + 29.091vw, pxToRem(40px)) clamp(pxToRem(16px), -0.705rem + 7.273vw, pxToRem(20px));
+        height: 100%;
+
+        .about-me-mobile-content {
+
+            @include flexbox(column, space-between, center, 0rem);
+            height: 100%;
+            width: 100%;
+
+            .about-me-top-section {
+                @include flexbox(column, space-between, center, 0rem);
+                gap: pxToRem(12px);
+
+                .about-me-par {
+                    text-align: center;
+                    line-height: clamp(pxToRem(20px), -0.455rem + 7.273vw, pxToRem(24px));
+                    @include typography($font-family: 'Poppins', $font-weight: 500, $font-size: clamp(pxToRem(13px), -0.338rem + 4.909vw, pxToRem(15.7px)), $letter-spacing: 0);
+                }
+            }
+
+            .mobile-profile-picture {
+                width: clamp(pxToRem(160px), -30.909rem + 174.545vw, pxToRem(256px));
+                padding-bottom: clamp(pxToRem(24px), -5.318rem + 29.091vw, pxToRem(40px));
+            }
+
+            .about-me-btn {
+                margin-bottom: clamp(pxToRem(24px), -8.727rem + 43.636vw, pxToRem(48px));
+            }
+
+            .about-me-bottom-section {
+
+                @include flexbox(column, space-between, center, 0rem);
+                gap: pxToRem(16px);
+                width: 100%;
+
+                .social-media-buttons {
+
+                    @include flexbox(row, center, center, 0rem);
+                    width: 100%;
+                    gap: pxToRem(40px);
+                    
+
+                    .social-media-link {
+                        @include flexbox(row, center, center, 0rem);
+                        gap: clamp(0px, -1.705rem + 7.273vw, pxToRem(4px));
+                        @include typography($font-family: 'Poppins', $font-weight: 400, $font-size: clamp(pxToRem(14px), -0.341rem + 5.455vw, pxToRem(18px)), $letter-spacing: -1px);
+
+                        svg {
+                            width: pxToRem(22px);
+                            height: pxToRem(22px);
+                            stroke-width: 1px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .desktop-profile-picture {
+            display: none;
+        }
     }
+}
 
-    .profile-picture {
-        width: pxToRem(240px);
-    }
+@media (min-width: 1024px) {
+    main {
+        @include flexbox(row, end, center, 0rem);
+        height: 100%;
+        padding: pxToRem(128px) pxToRem(280px);
+        gap: pxToRem(104px);
 
-    .about-me-btn {
-        background-color: $secondary-color-light;
+        .about-me-mobile-content {
+            @include flexbox(column, center, center, 0rem);
+
+            .about-me-top-section {
+                gap: 0;
+                padding-top: pxToRem(40px);
+                padding-bottom: pxToRem(40px);
+
+                .about-me-par {
+                    text-align: center;
+                    line-height: pxToRem(36px);
+                    @include typography($font-family: 'Poppins', $font-weight: 500, $font-size: 23px, $letter-spacing: 0);
+                }
+            }
+
+            .mobile-profile-picture {
+                display: none;
+            }
+
+            .about-me-bottom-section {
+                padding-top: pxToRem(96px);
+                width: 100%;
+
+                hr {
+                    height: 2px;
+                    border: none;
+                    background-color: $text-color-light;
+                }
+
+                .social-media-buttons {
+
+                    @include flexbox(row, start, center, 0rem);
+                    gap: pxToRem(64px);
+                    padding: 1rem;
+                
+    
+                    .social-media-link {
+                        @include typography($font-family: 'Poppins', $font-weight: 400, $font-size: 22px, $letter-spacing: -1px);
+                        @include flexbox(row, center, center, 0rem);
+                        gap: pxToRem(8px);
+
+                        svg {
+                            width: pxToRem(24px);
+                            height: pxToRem(24px);
+                            stroke-width: 1px;
+                        }
+                    }
+                }
+            }
+        }
+        .desktop-profile-picture {
+            display: block;
+        }
     }
 }

@@ -8,7 +8,7 @@ add_action('after_setup_theme', function() {
 });
 
 function david_brany_theme_init() {
-    wp_enqueue_style('main', get_template_directory_uri() . '/dist/css/main.css');
-    wp_enqueue_script('main', get_template_directory_uri() . '/dist/js/main.js', array(), null, true);
+    wp_enqueue_style('main-styles', get_template_directory_uri() . '/dist/css/main.css');
+    wp_enqueue_script('main-javascript', get_template_directory_uri() . './dist/js/main.js');
 }
 add_action('wp_enqueue_scripts', 'david_brany_theme_init');

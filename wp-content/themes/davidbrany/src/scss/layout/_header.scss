@@ -1,10 +1,28 @@
 @use "../index" as *;
 
 .header-title {
-    @include typography();
+    @include typography($font-family: 'Poppins', $font-weight: 700, $font-size: clamp(1.375rem, -0.33rem + 7.273vw, 1.625rem), $letter-spacing: -2px);
 }
 
-#header-expanded {
+#hamburger-icon {
+    @include flexbox(row, center, center, 0rem);
+    svg {
+        width: clamp(pxToRem(22px), 0.097rem + 5.455vw, pxToRem(25px));
+        height: clamp(pxToRem(22px), 0.097rem + 5.455vw, pxToRem(25px));
+    }
+}
+
+#header-expanded-top-close-icon {
+    @include flexbox(row, center, center, 0rem);
+    svg {
+        width: clamp(pxToRem(22px), 0.097rem + 5.455vw, pxToRem(25px));
+        height: clamp(pxToRem(22px), 0.097rem + 5.455vw, pxToRem(25px));
+    }
+}
+
+#header-expanded { 
+    @include flexbox(column, start, center, 0rem);
+
     position: fixed;
     top: 0;
     transform: translateX(100%);
@@ -13,7 +31,6 @@
     transition: transform 0.5s ease-in-out;
     z-index: 1000;
     background-color: $primary-color-light;
-    @include flexbox(column, start, center, 0rem);
 }
 
 #header-expanded.active {
@@ -29,8 +46,8 @@
 .header-expanded-content {
 
     @include flexbox(column, space-between, center, 0rem);
-    padding: pxToRem(48px);
-    padding-bottom: pxToRem(104px);
+    padding: clamp(pxToRem(24px), -8.727rem + 43.636vw, pxToRem(48px));
+    padding-bottom: clamp(pxToRem(40px), -24.773rem + 116.364vw, pxToRem(104px));
     height: 100vh;
 
     .header-desktop-title {
@@ -41,10 +58,10 @@
         @include flexbox(column, center, center, 0rem);
         
         li {
-            padding: pxToRem(32px);
+            padding: clamp(1rem, -5.818rem + 29.091vw, 2rem);
     
             a {
-                @include typography($font-family: 'Poppins', $font-weight: 400, $font-size: 20px, $letter-spacing: 0);
+                @include typography($font-family: 'Poppins', $font-weight: 400, $font-size: clamp(1.125rem, 0.273rem + 3.636vw, 1.25rem), $letter-spacing: 0);
                 padding-bottom: pxToRem(3px);
                 position: relative;
                 display: inline-block;
@@ -72,64 +89,60 @@
             }
         }
     }
-    
-    
 
     .header-expanded-menu-splitter {
         width: pxToRem(24px);
-        height: pxToRem(172px);
+        height: clamp(10rem, 4.886rem + 21.818vw, 10.75rem);
         stroke-width: 0;
         fill: $text-color-light;
     }
 
     .header-expanded-bottom {
         @include flexbox(column, space-around, center, 0rem);    
-        gap: pxToRem(40px);
+        gap: clamp(pxToRem(24px), -5.318rem + 29.091vw, pxToRem(40px));
 
         a {
             @include flexbox(row, space-between, center, 6px);    
             border: pxToRem(2px) solid $text-color-light;
             border-radius: pxToRem(24px);
-            padding: pxToRem(8px) pxToRem(14px);
-
-            .contact-me-icon {
-                width: pxToRem(18px);
-                height: pxToRem(18px);
-            }
+            padding: pxToRem(8px) clamp(pxToRem(10px), -1.08rem + 7.273vw, pxToRem(14px));
         }
 
         .theme-btn {
 
             @include ripple-effect($secondary-color-light);
+            padding: clamp(pxToRem(6px), -0.477rem + 3.636vw, pxToRem(8px)) clamp(pxToRem(10px), -0.227rem + 3.636vw, pxToRem(12px));
             display: inline-block;
             cursor: pointer;
 
             .theme-icon {
-                width: pxToRem(20px);
-                height: pxToRem(20px);
+                @include flexbox(row, center, center, 0rem);
+                width: clamp(pxToRem(16px), -0.705rem + 7.273vw, pxToRem(20px));
+                height: clamp(pxToRem(16px), -0.705rem + 7.273vw, pxToRem(20px));
             }
         }
 
         .contact-me-btn {
             @include ripple-effect($secondary-color-light);
-            @include typography($font-family: 'Poppins', $font-weight: 400, $font-size: 20px, $letter-spacing: 0);
-            padding: pxToRem(8px) pxToRem(14px);
+            @include typography($font-family: 'Poppins', $font-weight: 400, $font-size: clamp(pxToRem(16px), -0.705rem + 7.273vw, pxToRem(20px)), $letter-spacing: 0);
             border: pxToRem(2px) solid $text-color-light;
             border-radius: pxToRem(24px);
-            display: inline-flex;
+            padding: clamp(pxToRem(4px), -0.602rem + 3.636vw, pxToRem(6px)) clamp(pxToRem(10px), -0.227rem + 3.636vw, pxToRem(12px));
+            display: inline-flex; 
             align-items: center;
             gap: pxToRem(6px);
         
             .contact-me-icon {
-                width: pxToRem(18px);
-                height: pxToRem(18px);
+                @include flexbox(row, center, center, 0rem);
+                width: clamp(pxToRem(16px), -0.705rem + 7.273vw, pxToRem(20px));
+                height: clamp(pxToRem(16px), -0.705rem + 7.273vw, pxToRem(20px));
             }
         }        
     }
 }
 
 
-@media (min-width:801px) {
+@media (min-width: 1024px) {
     
     .header-desktop-title {
         @include typography($font-family: 'Poppins', $font-weight: 600, $font-size: 32px, $letter-spacing: -2px);
@@ -150,7 +163,7 @@
         
             @include flexbox(row, space-between, center, 0rem);
             height: auto;
-            padding: pxToRem(32px)  pxToRem(160px);
+            padding: pxToRem(32px) clamp(2.5rem, -2.5rem + 7.813vw, 10rem);
     
             .header-desktop-title {
                 display: block;
