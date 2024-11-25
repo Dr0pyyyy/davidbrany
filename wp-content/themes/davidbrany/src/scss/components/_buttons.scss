@@ -1,8 +1,8 @@
 @use "../index" as *;
 
 .wp-block-button__link {
-    color: $text-color;
-    background-color: $secondary-color;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
     @include typography($font-family: 'Poppins', $font-weight: 500, $font-size: clamp(pxToRem(16px), -0.705rem + 7.273vw, pxToRem(20px)), $letter-spacing: 0);
     border-radius: pxToRem(8px);
     padding: pxToRem(8px) pxToRem(24px);

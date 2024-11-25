@@ -28,9 +28,10 @@
     transform: translateX(100%);
     width: 100vw;
     height: 100vh;
-    transition: transform 0.5s ease-in-out;
     z-index: 1000;
-    background-color: $primary-color;
+    background-color: var(--primary-color);
+    transition: background-color 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 #header-expanded.active {
@@ -74,7 +75,8 @@
                     left: 0;
                     width: 100%;
                     height: pxToRem(1.8px);
-                    background-color: $text-color;
+                    background-color: var(--text-color); 
+                    transition: background-color 0.3s ease-in-out;
                     transform: scaleX(0);
                     transform-origin: left;
                 }
@@ -94,7 +96,8 @@
         width: pxToRem(24px);
         height: clamp(10rem, 4.886rem + 21.818vw, 10.75rem);
         stroke-width: 0;
-        fill: $text-color;
+        fill: var(--text-color); 
+        transition: background-color 0.3s ease-in-out;
     }
 
     .header-expanded-bottom {
@@ -103,14 +106,16 @@
 
         a {
             @include flexbox(row, space-between, center, 6px);    
-            border: pxToRem(2px) solid $text-color;
+            border: pxToRem(2px) solid var(--text-color); 
+            transition: background-color 0.3s ease-in-out;
             border-radius: pxToRem(24px);
             padding: pxToRem(8px) clamp(pxToRem(10px), -1.08rem + 7.273vw, pxToRem(14px));
         }
 
         .theme-btn {
 
-            @include ripple-effect($secondary-color);
+            @include ripple-effect(var(--secondary-color));
+            transition: background-color 0.3s ease-in-out;
             padding: clamp(pxToRem(6px), -0.477rem + 3.636vw, pxToRem(8px)) clamp(pxToRem(10px), -0.227rem + 3.636vw, pxToRem(12px));
             display: inline-block;
             cursor: pointer;
@@ -123,9 +128,10 @@
         }
 
         .contact-me-btn {
-            @include ripple-effect($secondary-color);
+            @include ripple-effect(var(--secondary-color));
             @include typography($font-family: 'Poppins', $font-weight: 400, $font-size: clamp(pxToRem(16px), -0.705rem + 7.273vw, pxToRem(20px)), $letter-spacing: 0);
-            border: pxToRem(2px) solid $text-color;
+            border: pxToRem(2px) solid var(--text-color); 
+            transition: background-color 0.3s ease-in-out;
             border-radius: pxToRem(24px);
             padding: clamp(pxToRem(4px), -0.602rem + 3.636vw, pxToRem(6px)) clamp(pxToRem(10px), -0.227rem + 3.636vw, pxToRem(12px));
             display: inline-flex; 
@@ -203,7 +209,7 @@
 
                     svg {
                         width: clamp(1rem, 0.714rem + 0.446vw, 1.25rem);
-                        height: clamp(1rem, 0.714rem + 0.446vw, 1.25rem)
+                        height: clamp(1rem, 0.714rem + 0.446vw, 1.25rem);
                     }
                 }
 
