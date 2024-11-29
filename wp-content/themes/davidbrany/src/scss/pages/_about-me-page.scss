@@ -18,20 +18,32 @@
                 gap: pxToRem(12px);
 
                 .about-me-par {
+                    @include typography($font-family: 'Poppins', $font-weight: 500, $font-size: clamp(pxToRem(13px), -0.338rem + 4.909vw, pxToRem(15.7px)), $letter-spacing: 0);
                     text-align: center;
                     line-height: clamp(pxToRem(20px), -0.455rem + 7.273vw, pxToRem(24px));
-                    @include typography($font-family: 'Poppins', $font-weight: 500, $font-size: clamp(pxToRem(13px), -0.338rem + 4.909vw, pxToRem(15.7px)), $letter-spacing: 0);
+                    opacity: 0;
+                    transform: translateY(-100%);
+                    animation: slideDown 0.8s ease-out forwards;
+                    animation-delay: 0.4s;
                 }
             }
 
             .mobile-profile-picture {
                 width: clamp(pxToRem(160px), -30.909rem + 174.545vw, pxToRem(256px));
                 padding-bottom: clamp(pxToRem(24px), -5.318rem + 29.091vw, pxToRem(40px));
+                opacity: 0;
+                transform: translateY(-100%);
+                animation: slideDown 0.8s ease-out forwards;
+                animation-delay: 0.4s;
             }
 
             .about-me-btn {
                 margin-bottom: clamp(pxToRem(24px), -8.727rem + 43.636vw, pxToRem(48px));
                 transition: transform 0.3s ease, background-color 0.3s ease;
+                opacity: 0;
+                transform: translateY(-100%);
+                animation: slideDown 0.8s ease-out forwards;
+                animation-delay: 0.9s;
             }
 
             .about-me-btn:hover {
@@ -69,6 +81,27 @@
                             height: pxToRem(22px);
                             stroke-width: 1px;
                         }
+                    }
+
+                    .social-media-link:first-child {
+                        opacity: 0;
+                        transform: translateY(-100%);
+                        animation: slideRight 0.4s ease-out forwards;
+                        animation-delay: 1.2s;
+                    }
+
+                    .social-media-link:nth-child(2) {
+                        opacity: 0;
+                        transform: translateY(-100%);
+                        animation: slideRight 0.5s ease-out forwards;
+                        animation-delay: 1.2s;
+                    }
+
+                    .social-media-link:nth-child(3) {
+                        opacity: 0;
+                        transform: translateY(-100%);
+                        animation: slideRight 0.8s ease-out forwards;
+                        animation-delay: 1.2s;
                     }
                 }
             }
@@ -184,7 +217,6 @@
                 }
 
                 .social-media-buttons {
-
                     @include flexbox(row, start, center, 0rem);
                     gap: clamp(3.5rem, 2.5rem + 1.563vw, 5rem);
                     padding: clamp(1rem, 0.467rem + 0.833vw, 1.8rem) clamp(1rem, -0.333rem + 2.083vw, 3rem);
@@ -205,8 +237,11 @@
         }
         .desktop-profile-picture {
             display: block;
-        
             height: clamp(25rem, 15rem + 15.625vw, 33.75rem);
+            opacity: 0;
+            transform: translateY(-100%);
+            animation: slideUp 0.6s ease-out forwards;
+            animation-delay: 0.4s;
         }
     }
 }
