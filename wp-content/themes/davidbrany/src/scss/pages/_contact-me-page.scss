@@ -1,0 +1,188 @@
+@use "../index" as *;
+
+main {
+    padding-top: 0;
+
+    .contact-me-content {
+
+        width: 100%;
+        height: 100%;
+
+        .contact-me-top-content {
+            @include flexbox(row, space-between, center, 0rem);
+            gap: 1rem;
+            padding: 0 1rem;
+            height: clamp(pxToRem(132px), -17.318rem + 109.091vw, pxToRem(192px));
+
+            .contact-me-header {
+                @include typography($font-family: 'Poppins', $font-weight: 700, $font-size: clamp(pxToRem(76px), 3.045rem + 7.273vw, pxToRem(80px)), $letter-spacing: -7px);
+                line-height: clamp(pxToRem(56px), -3.318rem + 29.091vw, pxToRem(72px));
+                padding-bottom: 0.6rem;
+            }
+
+            .contact-me-par {
+                @include typography($font-family: 'Poppins', $font-weight: 700, $font-size: clamp(pxToRem(18px), 0.273rem + 3.636vw, pxToRem(20px)), $letter-spacing: -1px);
+                padding-left: pxToRem(4.8px);
+                opacity: 0;
+                transform: translateY(-100%);
+                animation: slideDown 0.8s ease-out forwards;
+                animation-delay: 0.9s;
+            }
+
+            .contact-me-smile-memoji {
+                padding-top: clamp(pxToRem(16px), -12.636rem + 58.182vw, pxToRem(48px));
+                margin-top: 1rem;
+                height: clamp(pxToRem(160px), -10.455rem + 87.273vw, pxToRem(208px));
+                opacity: 0;
+                transform: translateY(-100%);
+                animation: slideDown 0.8s ease-out forwards;
+                animation-delay: 0.9s;
+            }
+        }
+
+        
+        form {
+            display: block !important;
+            padding: clamp(0px, -10.227rem + 43.636vw, pxToRem(24px)) pxToRem(16px) 0 pxToRem(16px);
+            opacity: 0;
+            transform: translateY(-100%);
+            animation: slideDown 0.8s ease-out forwards;
+            animation-delay: 0.9s;
+        
+            .forminator-field {
+                @include flexbox(column, center, start, 0rem);
+                padding: clamp(pxToRem(10px), -1.08rem + 7.273vw, pxToRem(14px)) 0;
+        
+                .forminator-label {
+                    align-self: flex-start;
+                    @include typography($font-family: 'Poppins', $font-weight: 600, $font-size: clamp(pxToRem(18px), 0.273rem + 3.636vw, pxToRem(20px)), $letter-spacing: -1px); 
+                    padding-bottom: clamp(pxToRem(3px), -0.239rem + 1.818vw, pxToRem(4px));
+                    color: var(--text-color);
+                }
+            }
+        
+            .forminator-field:last-child {
+                @include flexbox(column, center, center, 0rem);
+            }
+        }
+
+        .social-media-butons {
+            @include flexbox(row, space-between, start, 0rem);
+            padding: clamp(pxToRem(12px), -7.773rem + 36.364vw, pxToRem(32px)) clamp(pxToRem(40px), -4.318rem + 29.091vw, pxToRem(56px));
+
+            .social-media-button {
+                @include flexbox(column, center, center, 0rem);
+                @include typography($font-family: 'Poppins', $font-weight: 500, $font-size: 14px, $letter-spacing: -1px);
+                gap: pxToRem(8px);
+
+                svg {
+                    width: clamp(pxToRem(22px), -0.33rem + 7.273vw, pxToRem(26px));
+                    height: clamp(pxToRem(22px), -0.33rem + 7.273vw, pxToRem(26px));
+                    stroke-width: 0px;
+                }
+            }
+        }
+    }
+
+    .forminator-ui {
+        display: none;
+    }
+
+    .forminator-module-edit-link {
+        display: none;
+    }
+
+    .contact-me-desktop-memoji {
+        display: none;
+    }
+}
+
+//Desktops
+@media (min-width: 1024px) and (max-width: 1920px) {
+    main {    
+        padding: 40px 240px 0px 240px;
+        width: 100%;
+
+        .contact-me-content {
+
+            @include flexbox(row, space-between, start, 0rem);
+
+            .contact-me-desktop-left-part {
+
+                .contact-me-top-content {
+                    @include flexbox(row, space-between, center, 0rem);
+                    gap: 1rem;
+                    height: 152px;
+                    padding: 0;
+            
+                    .contact-me-header {
+                         @include typography($font-family: 'Poppins', $font-weight: 700, $font-size: 80px, $letter-spacing: -7px);
+                        line-height: 72px;
+                        padding-bottom: 0.6rem;
+                    }
+            
+                    .contact-me-par {
+                        @include typography($font-family: 'Poppins', $font-weight: 500, $font-size: 32px, $letter-spacing: -1px);
+                        padding-left: pxToRem(4.8px);
+                        opacity: 0;
+                        transform: translateY(-100%);
+                        animation: slideDown 0.8s ease-out forwards;
+                        animation-delay: 0.9s;
+                    }
+            
+                    .contact-me-smile-memoji {
+                        display: none;
+                    }
+                }
+
+                form {        
+                    padding: 0;
+
+                    .forminator-field {
+                        @include flexbox(column, start, start, 0rem);
+                    
+                        .forminator-label {
+                            @include typography($font-family: 'Poppins', $font-weight: 500, $font-size: 20px, $letter-spacing: -1px); 
+                        }
+
+                        .contact-me-btn {
+                            @include typography($font-family: 'Poppins', $font-weight: 500, $font-size: 20px, $letter-spacing: -1px);
+                            padding: pxToRem(12px) pxToRem(36px);
+                        }
+                    }
+                }
+            }
+    
+            .contact-me-desktop-right-part {
+
+                @include flexbox(column, start, space-between, 0rem);        
+                height: 100%;        
+
+                .contact-me-desktop-memoji {
+                    display: block;
+                    height: 600px;
+                }
+
+                .social-media-butons {
+                    
+                    padding: 64px 0;
+
+                    .social-media-button {
+                        @include flexbox(row, center, center, 0rem);
+                        @include typography($font-family: 'Poppins', $font-weight: 500, $font-size: 20px, $letter-spacing: -1px);
+                        gap: pxToRem(12px);
+
+                        svg {
+                            width: 26px;
+                            height: 26px;
+                            stroke-width: 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//4K screens, large screens
+@media (min-width: 1921px) { }

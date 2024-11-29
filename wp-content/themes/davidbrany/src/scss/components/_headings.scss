@@ -2,6 +2,10 @@
 
 .wp-block-heading {
     @include typography($font-family: 'Poppins', $font-weight: 700, $font-size: clamp(2.125rem, -2.136rem + 18.182vw, 2.75rem), $letter-spacing: -3.3px);
+    opacity: 0;
+    transform: translateY(-100%);
+    animation: slideDown 0.8s ease-out forwards;
+    animation-delay: 0.2s;
 }
 
 @media (min-width:1024px) and (max-width:1920px) {

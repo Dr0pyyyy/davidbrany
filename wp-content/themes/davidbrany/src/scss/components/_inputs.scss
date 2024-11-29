@@ -1,0 +1,70 @@
+.forminator-input, 
+.forminator-textarea {
+    background-color: transparent;
+    border: 1px solid var(--text-color);
+    border-radius: 8px;
+    height: clamp(32px, -1.409rem + 14.545vw, 40px);
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: clamp(14px, 0.023rem + 3.636vw, 16px);
+    letter-spacing: -1px;
+    padding-left: 0.6rem;
+    transition: border-color 0.3s ease;
+}
+
+.forminator-textarea {
+    min-height: clamp(80px, -20.568rem + 109.091vw, 140px) !important;
+    height: clamp(80px, -20.568rem + 109.091vw, 140px);
+}
+
+.forminator-input:focus, 
+.forminator-textarea:focus {
+    outline-width: 2px;
+    outline-color: var(--text-color); 
+}
+
+.forminator-input::placeholder, 
+.forminator-textarea::placeholder {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: clamp(14px, 0.023rem + 3.636vw, 16px);
+    letter-spacing: -1px;
+}
+
+.forminator-description, 
+.forminator-required {
+    display: none;
+}
+
+//Desktops
+@media (min-width: 1024px) and (max-width: 1920px) { 
+    .forminator-input, 
+    .forminator-textarea {
+        height: 40px;
+        border-width: 2px;
+        width: 400px;
+    }
+
+    .forminator-textarea {
+        width: 600px;
+        min-height: 200px;
+        height: 200px;
+    }
+
+    .forminator-input:focus, 
+    .forminator-textarea:focus {
+        outline-width: 3px;
+        outline-color: var(--text-color); 
+    }
+
+    .forminator-input::placeholder, 
+    .forminator-textarea::placeholder {
+        font-size: 22px;
+    }
+
+    .forminator-description, 
+    .forminator-required {
+        display: none;
+    }
+}
