@@ -2,118 +2,176 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:200');
 
 main {
-    .my-work-header {
-        @include flexbox(row, center, center, 0rem);
+  max-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
 
-        figure {
-            margin: 0;
-        } 
+  padding-top: pxToRem(24px);
+  padding-bottom: pxToRem(24px);
 
-        .my-work-header-img {
-            width: 40px;
-            height: 40px;
-        }
+  .my-work-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
-        .my-work-header-img:nth-of-type(1) {
-            transform: rotate(-15.55deg);
-            margin-right: 2rem;
-        }
-
-        .my-work-header-img:nth-of-type(2) {
-            transform: rotate(20.6deg);
-            margin-bottom: 3rem;
-            margin-left: 1.8rem;
-        }
+    figure {
+      margin: 0;
     }
 
-    .my-work-par {
-        @include typography($font-family: 'Poppins', $font-weight: 500, $font-size: clamp(pxToRem(13px), -0.338rem + 4.909vw, pxToRem(15.7px)), $letter-spacing: 0);
-        text-align: center;
-        line-height: clamp(pxToRem(20px), -0.455rem + 7.273vw, pxToRem(24px));
-        opacity: 0;
-        transform: translateY(-100%);
-        animation: slideDown 0.8s ease-out forwards;
-        animation-delay: 0.4s;
-        padding-bottom: 2rem;
+    .my-work-header-img {
+      width: 40px;
+      height: 40px;
+
+      &:nth-of-type(1) {
+        transform: rotate(-15.55deg);
+        margin-right: 2rem;
+      }
+
+      &:nth-of-type(2) {
+        transform: rotate(20.6deg);
+        margin-bottom: 3rem;
+        margin-left: 1.8rem;
+      }
     }
+  }
+
+  .my-work-par {
+    @include typography(
+      $font-family: 'Poppins',
+      $font-weight: 500,
+      $font-size: clamp(pxToRem(13px), -0.338rem + 4.909vw, pxToRem(15.7px)),
+      $letter-spacing: 0
+    );
+    text-align: center;
+    line-height: clamp(pxToRem(20px), -0.455rem + 7.273vw, pxToRem(24px));
+    opacity: 0;
+    transform: translateY(-100%);
+    animation: slideDown 0.8s ease-out forwards;
+    animation-delay: 0.4s;
+    padding-bottom: 2rem;
+  }
+
+  .my-work-cards {
+    @include flexbox(column, center, center, 0rem);
+    gap: 32px;
 
     .my-work-card {
-        @include typography($font-family: 'Poppins', $font-weight: 800, $font-size: 24px, $letter-spacing: 0);
-        position: relative;
-        display: inline-block;
-        overflow: hidden;
-        margin: 10px;
-        height: 100%;
-        width: 100%;
-        color: #fff;
-        text-align: left;
-        font-size: 16px;
-        background: #000;
-      }
-      
-      .my-work-card * {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+      text-align: left;
+      background: rgba(0, 0, 0, 1);
+      border-radius: 8px;
+      height: pxToRem(228px);
+
+      * {
         box-sizing: border-box;
         transition: all 0.4s ease;
       }
-      
-      .my-work-card img {
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        vertical-align: top;
-      }
-      
+
       .my-work-card-label {
+        @include typography(
+          $font-family: 'Poppins',
+          $font-weight: 700,
+          $font-size: pxToRem(30px),
+          $letter-spacing: -1px
+        );
+        color: #EAE6DA;
         position: absolute;
         left: 20px;
         bottom: 20px;
-        font-size: 1.2em;
         opacity: 0;
         transition: opacity 0.4s ease, transform 0.4s ease;
         transform: translateY(20px);
         z-index: 2;
       }
-      
-      .my-work-card:hover img {
+
+      &:hover img {
         opacity: 0.2;
         transform: scale(1.1);
       }
-      
-      .my-work-card:hover .my-work-card-label {
+
+      &:hover .my-work-card-label {
         opacity: 1;
         transform: translateY(0);
       }
-      
-      .my-work-card:before,
-      .my-work-card:after {
+
+      &:before,
+      &:after {
         position: absolute;
         top: 20px;
         right: 20px;
         content: '';
-        background-color: #fff;
+        background-color: #EAE6DA;
         z-index: 1;
         opacity: 0;
         transition: all 0.4s ease 0.25s;
       }
-      
-      .my-work-card:before {
+
+      &:before {
         width: 0;
-        height: 1px;
+        height: 2px;
+        border-radius: 1rem;
       }
-      
-      .my-work-card:after {
+
+      &:after {
         height: 0;
-        width: 1px;
+        width: 2px;
+        border-radius: 1rem;
       }
-      
-      .my-work-card:hover:before {
+
+      &:hover:before {
         width: 40px;
         opacity: 1;
       }
-      
-      .my-work-card:hover:after {
+
+      &:hover:after {
         height: 40px;
         opacity: 1;
       }
-      
+    }
+  }
+
+  .my-work-social-media-butons {
+
+    @include flexbox(row, space-between, center, 0rem);
+    width: 100%;
+    padding: 40px 24px;
+
+    .my-work-social-media-button {
+
+      @include typography($font-family: 'Poppins', $font-weight: 500, $font-size: clamp(pxToRem(13px), -0.338rem + 4.909vw, pxToRem(15.7px)), $letter-spacing: 0);
+      @include flexbox(column, center, center, 0rem);
+      gap: 8px;
+
+      svg {
+        stroke-width: 0px;
+
+        path {
+            fill: var(--text-color); 
+        }
+      }
+    }
+  }
+}
+
+//Desktops
+@media (min-width: 1024px) and (max-width: 1920px) {
+  main {
+    @include flexbox(column, center, center, 0rem);
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    .my-work-cards {
+      display: grid;
+      grid-row:auto;
+      width: 100%;
+      gap: 0;
+
+      .my-work-card { 
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
 }
