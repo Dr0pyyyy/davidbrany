@@ -98,6 +98,9 @@
         stroke-width: 0;
         fill: var(--text-color); 
         transition: background-color 0.3s ease-in-out;
+            path {
+                fill: var(--text-color); 
+            }
     }
 
     .header-expanded-bottom {
@@ -124,6 +127,12 @@
                 @include flexbox(row, center, center, 0rem);
                 width: clamp(pxToRem(16px), -0.705rem + 7.273vw, pxToRem(20px));
                 height: clamp(pxToRem(16px), -0.705rem + 7.273vw, pxToRem(20px));
+
+                svg {
+                    path {
+                        fill: none;
+                    }
+                }
             }
         }
 

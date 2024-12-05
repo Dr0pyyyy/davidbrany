@@ -2,7 +2,7 @@
 
 <?php get_header() ?>
 
-<main class="my-work-page">
+<main class="my-work-page bg-svg">
     <?php
     if (have_posts()) : ?>
 

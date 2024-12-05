@@ -1,5 +1,11 @@
 @use "../index" as *;
 
+.bg-svg {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1728" height="1117" viewBox="0 0 1728 1117" fill="none"><path d="M-477 1064.5C30.8333 619.333 1051.16 -224.5 794 611.5C575.6 1321.5 1558.33 451 2046 -96" stroke="url(%23paint0_diamond_2789_588)" stroke-opacity="0.8" stroke-width="200"/><defs><radialGradient id="paint0_diamond_2789_588" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(241.742 802.017) rotate(-14.759) scale(1865.82 4056.41)"><stop stop-color="%23F29641"/><stop offset="0.5" stop-color="%23EEBF93"/><stop offset="1" stop-color="%23FFD9B5"/></radialGradient></defs></svg>') no-repeat;
+    background-size: cover;
+    background-position: center 40%;
+}
+
 main {
     padding-top: 0;
 
@@ -44,26 +50,59 @@ main {
         form {
             display: block !important;
             padding: clamp(0px, -10.227rem + 43.636vw, pxToRem(24px)) pxToRem(16px) 0 pxToRem(16px);
-            opacity: 0;
-            transform: translateY(-100%);
-            animation: slideDown 0.8s ease-out forwards;
-            animation-delay: 0.9s;
-        
-            .forminator-field {
-                @include flexbox(column, center, start, 0rem);
-                padding: clamp(pxToRem(10px), -1.08rem + 7.273vw, pxToRem(14px)) 0;
-        
-                .forminator-label {
-                    align-self: flex-start;
-                    @include typography($font-family: 'Poppins', $font-weight: 600, $font-size: clamp(pxToRem(18px), 0.273rem + 3.636vw, pxToRem(20px)), $letter-spacing: -1px); 
-                    padding-bottom: clamp(pxToRem(3px), -0.239rem + 1.818vw, pxToRem(4px));
-                    color: var(--text-color);
+            .forminator-row {   
+
+                .forminator-field {
+                    @include flexbox(column, center, start, 0rem);
+                    padding: clamp(pxToRem(10px), -1.08rem + 7.273vw, pxToRem(14px)) 0;
+            
+                    .forminator-label {
+                        align-self: flex-start;
+                        @include typography($font-family: 'Poppins', $font-weight: 600, $font-size: clamp(pxToRem(18px), 0.273rem + 3.636vw, pxToRem(20px)), $letter-spacing: -1px); 
+                        padding-bottom: clamp(pxToRem(3px), -0.239rem + 1.818vw, pxToRem(4px));
+                        color: var(--text-color);
+                    }
                 }
+            }
+
+            .forminator-row:nth-of-type(2) {
+                animation: slideDown 0.8s ease-out forwards;
+                animation-delay: 0.9s;
+                opacity: 0;
+                transform: translateY(-100%); 
+            }
+
+            .forminator-row:nth-of-type(3) {
+                animation: slideDown 0.8s ease-out forwards;
+                animation-delay: 1.1s;
+                opacity: 0;
+                transform: translateY(-100%); 
+            }
+
+            .forminator-row:nth-of-type(4) {
+                animation: slideDown 0.8s ease-out forwards;
+                animation-delay: 1.3s;
+                opacity: 0;
+                transform: translateY(-100%); 
+            }
+
+            .forminator-row:nth-of-type(5) {
+                animation: slideDown 0.8s ease-out forwards;
+                animation-delay: 1.7s;
+                opacity: 0;
+                transform: translateY(-100%); 
             }
         
             .forminator-field:last-child {
                 @include flexbox(column, center, center, 0rem);
             }
+        }
+
+        .contact-me-desktop-memoji {
+            animation: slideDown 1.2s ease-out forwards;
+            animation-delay: 1.2s;
+            opacity: 0;
+            transform: translateY(-100%); 
         }
 
         .social-media-butons {
@@ -73,12 +112,22 @@ main {
             .social-media-button {
                 @include flexbox(column, center, center, 0rem);
                 @include typography($font-family: 'Poppins', $font-weight: 500, $font-size: 14px, $letter-spacing: -1px);
+
+                animation: slideDown 0.8s ease-out forwards;
+                animation-delay: 2s;
+                opacity: 0;
+                transform: translateY(-100%); 
+
                 gap: pxToRem(8px);
 
                 svg {
                     width: clamp(pxToRem(22px), -0.33rem + 7.273vw, pxToRem(26px));
                     height: clamp(pxToRem(22px), -0.33rem + 7.273vw, pxToRem(26px));
                     stroke-width: 0px;
+
+                    path {
+                        fill: var(--text-color); 
+                    }
                 }
             }
         }
@@ -126,8 +175,6 @@ main {
                         padding-left: pxToRem(4.8px);
                         opacity: 0;
                         transform: translateY(-100%);
-                        animation: slideDown 0.8s ease-out forwards;
-                        animation-delay: 0.9s;
                     }
             
                     .contact-me-smile-memoji {

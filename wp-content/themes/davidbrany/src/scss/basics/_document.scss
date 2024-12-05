@@ -67,8 +67,11 @@ img {
 svg {
     width: pxToRem(26px);
     height: pxToRem(26px);
-    stroke: var(--text-color); 
     stroke-width: pxToRem(2.5px);
     stroke-linecap: round;
     fill: none;
+
+    path {
+        stroke: var(--text-color); 
+    }
 }

@@ -2,7 +2,7 @@
 
 <?php get_header() ?>
 
-<main>
+<main class="bg-svg">
     <?php
     if (have_posts()) : ?>
 

@@ -2,7 +2,7 @@
 
 <?php get_header() ?>
 
-<main>
+<main class="bg-svg">
     <?php
     if (have_posts()) : ?>
 
@@ -11,10 +11,10 @@
         <div class="about-me-mobile-content">
             <?php the_content(); ?>
 
-            <img src="http://localhost:8080/davidbrany/wp-content/uploads/2024/11/profile.picture.png" alt="Profile picture" class="mobile-profile-picture">
+            <img src="http://localhost:8080/davidbrany/wp-content/uploads/2024/12/profile-picture.png" alt="Profile picture" class="profile-picture mobile-profile-picture">
 
             <button class="wp-block-button__link about-me-btn">View Studies</button>
-
+ 
             <div class="about-me-bottom-section">
                 <hr class="about-me-splitter">
 
@@ -41,7 +41,7 @@
             </div>
 
             </div>
-            <img src="http://localhost:8080/davidbrany/wp-content/uploads/2024/11/profile.picture.png" alt="Profile picture" class="desktop-profile-picture">
+            <img src="http://localhost:8080/davidbrany/wp-content/uploads/2024/12/profile-picture.png" alt="Profile picture" class="profile-picture desktop-profile-picture">
 
     <?php endwhile;
     endif;
